@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var destWindow = window.open('dest.html', 'dest');
+    setInterval(() => {
+        destWindow.postMessage('Hi, I\'m Src.', '/');
+    }, 1000);
+    window.onmessage = (evt) => console.log(evt.data, evt.origin);
+</script>
+</body>
+</html>
