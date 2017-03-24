@@ -8,6 +8,7 @@
 <script>
     window.addEventListener('message', (evt) => {
         console.log(evt.data, evt.origin);
+//        window.global
         evt.source.postMessage('OK!!!', '/');
     })
 </script>

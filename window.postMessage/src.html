@@ -6,10 +6,31 @@
 </head>
 <body>
 <script>
+    window.addEventListener('load', () => {
+        console.log('window load')
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded');
+    })
     var destWindow = window.open('dest.html', 'dest');
-    setInterval(() => {
-        destWindow.postMessage('Hi, I\'m Src.', '/');
+    var timer = setInterval(() => {
+        if (!destWindow.closed) {
+            destWindow.__parent_send = () => {
+                console.log('sending')
+                destWindow.postMessage('Hi, I\'m Src.', '/');
+                destWindow.global = "hi";
+            };
+            destWindow.__parent_send();
+            clearTimeout(timer);
+        }
     }, 1000);
+
+    destWindow.addEventListener('beforeunload', () => console.info('BYE'));
+    // not run
+    destWindow.addEventListener('load', () => console.info('load'));
+    // not run
+    destWindow.addEventListener('close', () => console.info('BYE CLOSE'));
+
     window.onmessage = (evt) => console.log(evt.data, evt.origin);
 </script>
 </body>
