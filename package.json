@@ -1,4 +1,7 @@
 {
   "name": "learn-basic-tech",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/node": "^7.0.27"
+  }
 }
