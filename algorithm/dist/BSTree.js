@@ -1,18 +1,24 @@
+"use strict";
 /**
  * Created by moyu on 2017/6/2.
  */
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BinNode_1 = require('./BinNode');
-var BinTree_1 = require('./BinTree');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var BinNode_1 = require("./BinNode");
+var BinTree_1 = require("./BinTree");
 var BSTree = (function (_super) {
     __extends(BSTree, _super);
     function BSTree() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     BSTree.prototype.toString = function () {
         return "BSTree::{[root] -> " + this.root + "}";
@@ -197,7 +203,6 @@ var BSTree = (function (_super) {
     };
     return BSTree;
 }(BinTree_1.default));
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BSTree;
 var tree = new BSTree(15, 6, 15, 18, 3, 7, 17, 20, 2, 4, 13, 9);
 // console.log(tree);

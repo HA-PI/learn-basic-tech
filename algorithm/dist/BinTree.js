@@ -1,14 +1,15 @@
+"use strict";
 /**
  * Created by moyu on 2017/6/2.
  */
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BinTree = (function () {
     function BinTree() {
-        var _this = this;
         var array = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            array[_i - 0] = arguments[_i];
+            array[_i] = arguments[_i];
         }
+        var _this = this;
         array.forEach(function (ele) {
             _this.insert(ele);
         });
@@ -48,6 +49,5 @@ var BinTree = (function () {
     };
     return BinTree;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BinTree;
 //# sourceMappingURL=BinTree.js.map

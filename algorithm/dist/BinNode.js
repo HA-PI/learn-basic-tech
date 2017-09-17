@@ -1,7 +1,8 @@
+"use strict";
 /**
  * Created by moyu on 2017/6/2.
  */
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BinNode = (function () {
     function BinNode(val) {
         this.value = val;
@@ -11,6 +12,5 @@ var BinNode = (function () {
     };
     return BinNode;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BinNode;
 //# sourceMappingURL=BinNode.js.map
